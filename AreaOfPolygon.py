@@ -1,6 +1,6 @@
 import math
 import numpy as np
-from tabulate import tabulate
+
 
 print("\n");
 
@@ -94,28 +94,34 @@ Ix = -(Ix/12)
 Iy = Iy/12
 Ixy = -(Ixy/24)
 
-Xt = Sy/Ax
-Yt = Sx/Ax
-
-Ixt = Ix - Yt**2 * Ax
-Iyt = Iy - Xt **2 * Ax
-Ixyt = Ixy + Xt * Yt * Ax
+if Ax == 0:
+    print("Geometric Characteristics")
+    print("Ax:", Ax)
+    print ("The coordinates form a line")
+    print("\n")
+else:
+    Xt = Sy/Ax
+    Yt = Sx/Ax
+    Ixt = Ix - Yt**2 * Ax
+    Iyt = Iy - Xt **2 * Ax
+    Ixyt = Ixy + Xt * Yt * Ax
+    print("\n")
+    print("Geometric Characteristics")
+    print(f"Ax: {Ax:>9.2f}")
+    print(f"Sx: {Sx:>9.2f}")
+    print(f"Sy: {Sy:>9.2f}")
+    print(f"Ix: {Ix:>9.2f}")
+    print(f"Ix: {Iy:>9.2f}")
+    print(f"Ixy: {Ixy:>8.2f}")
+    print(f"Xt: {Xt:>9.2f}")
+    print(f"Yt: {Yt:>9.2f}")
+    print(f"Ixt: {Ixt:>8.2f}")
+    print(f"Iyt: {Iyt:>8.2f}")
+    print(f"Ixyt: {Ixyt:>7.2f}")
 
 print("\n")
-print("Geometric Characteristics")
-print(f"Ax: {Ax:>9.2f}")
-print(f"Sx: {Sx:>9.2f}")
-print(f"Sy: {Sy:>9.2f}")
-print(f"Ix: {Ix:>9.2f}")
-print(f"Ix: {Iy:>9.2f}")
-print(f"Ixy: {Ixy:>8.2f}")
-print(f"Xt: {Xt:>9.2f}")
-print(f"Yt: {Yt:>9.2f}")
-print(f"Ixt: {Ixt:>8.2f}")
-print(f"Iyt: {Iyt:>8.2f}")
-print(f"Ixyt: {Ixyt:>7.2f}")
 
-# print(tabulate([['Ax', {Ax: .2f}], ['Bob', 19]], headers=['Name', 'Age']))
+
 
 
 
